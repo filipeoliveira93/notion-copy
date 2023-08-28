@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tiptap/extension-code-block-lowlight": "^2.1.7",
     "@tiptap/pm": "^2.1.7",
     "@tiptap/react": "^2.1.7",
     "@tiptap/starter-kit": "^2.1.7",
+    "highlight.js": "^11.8.0",
+    "lowlight": "^2.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
