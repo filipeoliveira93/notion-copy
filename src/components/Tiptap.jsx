@@ -21,7 +21,11 @@ import html from "highlight.js/lib/languages/xml";
 import { initialContent } from "./initialContent";
 
 import "highlight.js/styles/tokyo-night-dark.css";
-import { RxScissors } from "react-icons/rx/index.esm";
+import {
+	RxChatBubble,
+	RxChevronDown,
+	RxScissors,
+} from "react-icons/rx/index.esm";
 // Register languages used for syntax highlighting
 lowlight.registerLanguage("html", html);
 lowlight.registerLanguage("css", css);
@@ -55,13 +59,35 @@ const Tiptap = () => {
 				<BubbleMenu
 					className='bg-zinc-700 text-zinc-100 shadow-lg border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden flex divide-x divide-zinc-600'
 					editor={editor}>
-					<button className='p-2 text-zinc-200 hover:text-zinc-50 hover:bg-zinc-600 text-sm flex items-center  font-medium leading-none ease duration-150'>
+					<button
+						// onClick={() => editor.chain().focus().toggleBold().run()}
+						className='  p-2 text-zinc-200 hover:text-zinc-50 hover:bg-zinc-600 text-sm flex items-center  font-medium leading-none ease duration-150'>
+						<RxChevronDown className='w-4 h-4 mx-1' />
+						Text
+					</button>
+					<button
+						// onClick={() => editor.chain().focus().toggleBold().run()}
+						// data-active={editor.isActive("bold")}
+						className='  p-2 text-zinc-200 hover:text-zinc-50 hover:bg-zinc-600 text-sm flex items-center  font-medium leading-none ease duration-150'>
+						<RxChatBubble className='w-4 h-4 mx-1' />
+						Comment
+					</button>
+					<button
+						onClick={() => editor.chain().focus().toggleBold().run()}
+						data-active={editor.isActive("bold")}
+						className=' data-[active=true]:text-violet-400 p-2 text-zinc-200 hover:text-zinc-50 hover:bg-zinc-600 text-sm flex items-center  font-medium leading-none ease duration-150'>
 						<RxFontBold className='w-4 h-4' />
 					</button>
-					<button className='p-2 text-zinc-200 hover:text-zinc-50 hover:bg-zinc-600 text-sm flex items-center  font-medium leading-none ease duration-150'>
+					<button
+						onClick={() => editor.chain().focus().toggleItalic().run()}
+						data-active={editor.isActive("italic")}
+						className='data-[active=true]:text-violet-400 p-2 text-zinc-200 hover:text-zinc-50 hover:bg-zinc-600 text-sm flex items-center  font-medium leading-none ease duration-150'>
 						<RxFontItalic className='w-4 h-4' />
 					</button>
-					<button className='p-2 text-zinc-200 hover:text-zinc-50 hover:bg-zinc-600 text-sm flex items-center  font-medium leading-none ease duration-150'>
+					<button
+						onClick={() => editor.chain().focus().toggleStrike().run()}
+						data-active={editor.isActive("strike")}
+						className='data-[active=true]:text-violet-400 p-2 text-zinc-200 hover:text-zinc-50 hover:bg-zinc-600 text-sm flex items-center  font-medium leading-none ease duration-150'>
 						<RxScissors className='w-4 h-4' />
 					</button>
 					<button className='p-2 text-zinc-200 hover:text-zinc-50 hover:bg-zinc-600 text-sm flex items-center  font-medium leading-none ease duration-150'>
